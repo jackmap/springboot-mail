@@ -41,14 +41,17 @@ public class MailserviceImpl implements MailService {
 	 * @param content
 	 */
 	public void sendSimpleMail(String to, String subject, String content) {
-		SimpleMailMessage message = new SimpleMailMessage();
-		message.setFrom(from);
-		message.setTo(to);// 收件人
-		message.setSubject(subject);// 主题
-		message.setText(content);// 内容
-
+		  SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+		 //邮件发送人
+        simpleMailMessage.setFrom(from);
+        //邮件接收人
+        simpleMailMessage.setTo(to);
+        //邮件主题
+        simpleMailMessage.setSubject(subject);
+        //邮件内容
+        simpleMailMessage.setText(content);
 		try {
-			mailSender.send(message);
+			mailSender.send(simpleMailMessage);
 			logger.info("简单邮件已经发送。");
 		} catch (Exception e) {
 			logger.error("发送简单邮件时发生异常！", e);
