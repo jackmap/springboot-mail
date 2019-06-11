@@ -42,8 +42,8 @@ public class MailserviceImpl implements MailService {
 	 */
 	public void sendSimpleMail(String to, String subject, String content) {
 		SimpleMailMessage message = new SimpleMailMessage();
-		message.setFrom(from);// 收件人
-		message.setTo(to);
+		message.setFrom(from);
+		message.setTo(to);// 收件人
 		message.setSubject(subject);// 主题
 		message.setText(content);// 内容
 

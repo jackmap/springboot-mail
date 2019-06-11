@@ -15,11 +15,10 @@ public class IndexController {
 	@Autowired
 	public MailService mailService;
 	
-	
-	    @GetMapping("/index")
-		public String Index() {
-	    	mailService.sendSimpleMail("1541835901@qq.com", "测试邮件", "这是无所谓的结局和开始");
-			return "index";
-		}
+    @GetMapping("/index")
+	public String Index() {
+    	mailService.sendSimpleMail("632525320@qq.com", "测试邮件", "这是无所谓的结局和开始 .....");
+    	return "index";
+	}
 
 }
